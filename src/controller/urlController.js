@@ -20,11 +20,12 @@ const urlRegex = function (match) {
 
 //Connect to redis
 const redisClient = redis.createClient(
-    19343,
-    "redis-19343.c264.ap-south-1-1.ec2.cloud.redislabs.com",
+    14020,
+    "redis-14020.c212.ap-south-1-1.ec2.cloud.redislabs.com",
+    
     { no_ready_check: true }
 );
-redisClient.auth("p3r7GpZIctZOMmGomjarPsl8wWMf58Xu", function (err) {
+redisClient.auth("pVbprLOd85SalbxsCiRqriIaCDBamEmo", function (err) {
     if (err) throw err;
 });
 
@@ -44,7 +45,8 @@ const GET_ASYNC = promisify(redisClient.GET).bind(redisClient);
 
 
 
-//============================================ Create Url Shorten API =======================================
+
+//============================================ Create Url Shorten API =======================================//
 
 const createUrl = async function (req, res) {
     try {
